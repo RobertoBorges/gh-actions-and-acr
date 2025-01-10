@@ -45,7 +45,7 @@ jobs:
 
       - run: az acr login --name ${{ secrets.ACR_LOGIN_SERVER }}
 
-      - run: docker build . -t ${{ secrets.ACR_LOGIN_SERVER }}/sample:${{ github.sha }}
+      - run: docker build . -t ${{ secrets.ACR_LOGIN_SERVER }}.azurecr.io/sample:${{ github.sha }}
 
-      - run: docker push ${{ secrets.ACR_LOGIN_SERVER }}/sample:${{ github.sha }}
+      - run: docker push ${{ secrets.ACR_LOGIN_SERVER }}.azurecr.io/sample:${{ github.sha }}
 
